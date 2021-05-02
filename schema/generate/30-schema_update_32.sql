@@ -1,6 +1,6 @@
 --Group 6 added table 5-1-2021
 CREATE TABLE IF NOT EXISTS "augur_data"."repo_libyear" (
-  "repo_libyear_id" int8 NOT NULL DEFAULT nextval('"augur_data".repo_libyear_repo_libyear_id_seq'::regclass),
+  "repo_libyear_id" serial8 NOT NULL,
   "repo_id" int8,
   "repo_libyears" int4,
   "repo_path" varchar(255),
