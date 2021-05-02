@@ -33,4 +33,4 @@
 \i schema/generate/28-schema_update_30.sql
 \i schema/generate/29-schema_update_31.sql
 --Group6 update addition
-\i schema/generate/30-schema_update_Group6_32.sql
+\i schema/generate/30-schema_update_32.sql
