@@ -14,7 +14,7 @@ from sqlalchemy import MetaData
 from workers.worker_base import worker
 
 class LibyearWorker(Worker):
-    """ Worker that collects data from the Github API and stores it in our database
+    """ Worker that collects data from Repository and stores it in our database
     task: most recent task the broker added to the worker's queue
     child: current process of the queue being ran
     queue: queue of tasks to be fulfilled
@@ -29,10 +29,7 @@ class LibyearWorker(Worker):
         models = ['issues']
 
     # Just tables you are going to add data to.
-        data_tables = ['repo_libyears', 'contributors', 'issues', 'issue_labels', 'message',
-            'issue_message_ref', 'issue_events','issue_assignees','contributors_aliases',
-            'pull_request_assignees', 'pull_request_events', 'pull_request_reviewers', 'pull_request_meta',
-            'pull_request_repo']
+        data_tables = ['repo_libyears']
 
     # These are taken care of, and are the same for every worker.
         operations_tables = ['worker_history', 'worker_job']
