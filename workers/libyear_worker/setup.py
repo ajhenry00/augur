@@ -20,7 +20,7 @@ setup(
 		'flask',
 		'requests',
 		'psycopg2-binary',
-		'libyear',
+		'-e git+git://github.com/ajhenry00/libyear.git@master#egg=libyear',
 	],
     entry_points={
         'console_scripts': [
