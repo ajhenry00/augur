@@ -87,7 +87,7 @@ class LibyearWorker(Worker):
                     'comment_lines': file['Comment'],
                     'blank_lines': file['Blank'],
                     'code_complexity': file['Complexity'],
-                    'tool_source': self.tool_source,
+                    'tool_nsource': self.tool_source,
                     'tool_version': self.tool_version,
                     'data_source': self.data_source,
                     'data_collection_date': datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
