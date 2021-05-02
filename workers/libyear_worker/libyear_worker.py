@@ -13,6 +13,8 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import MetaData
 from workers.worker_base import worker
 
+import workers.libyear_worker.Libyear
+
 class LibyearWorker(Worker):
     """ Worker that collects data from Repository and stores it in our database
     task: most recent task the broker added to the worker's queue
@@ -71,28 +73,19 @@ class LibyearWorker(Worker):
         self.logger.info('Running `scc`....')
         self.logger.info(f'Repo ID: {repo_id}, Path: {path}')
 
-        output = subprocess.check_output([self.config['scc_bin'], '-f', 'json', path])
-        records = json.loads(output.decode('utf8'))
+        #calculate libyears here
+        libyears = somefunc(path)
 
-        for record in records:
-            for file in record['Files']:
-                repo_labor = {
-                    'repo_id': repo_id,
-                    'rl_analysis_date': datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ'),
-                    'programming_language': file['Language'],
-                    'file_path': file['Location'],
-                    'file_name': file['Filename'],
-                    'total_lines': file['Lines'],
-                    'code_lines': file['Code'],
-                    'comment_lines': file['Comment'],
-                    'blank_lines': file['Blank'],
-                    'code_complexity': file['Complexity'],
-                    'tool_nsource': self.tool_source,
-                    'tool_version': self.tool_version,
-                    'data_source': self.data_source,
-                    'data_collection_date': datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
-                }
+        repo_libyear = {
+            'repo_id': repo_id,
+            'repo_libyears': libyears,
+            'repo_path': path,
+            'tool_source': self.tool_source,
+            'tool_version': self.tool_version,
+            'data_source': self.data_source,
+            'data_collection_date': datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+        }
 
-                result = self.db.execute(self.repo_labor_table.insert().values(repo_labor))
-                self.logger.info(f"Added Repo Labor Data: {result.inserted_primary_key}")
+        result = self.db.execute(self.repo_labor_table.insert().values(repo_labor))
+        self.logger.info(f"Added Repo Libyear Data: {result.inserted_primary_key}")
 

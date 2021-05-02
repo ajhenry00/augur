@@ -19,8 +19,7 @@ setup(
 	install_requires=[
 		'flask',
 		'requests',
-		'psycopg2-binary',
-		'-e git+git://github.com/ajhenry00/libyear.git@master#egg=libyear',
+		'psycopg2-binary'
 	],
     entry_points={
         'console_scripts': [
@@ -32,6 +31,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.7'
     ]
 )

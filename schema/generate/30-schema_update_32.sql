@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS "augur_data"."repo_libyear" (
   "repo_libyear_id" serial8 NOT NULL,
   "repo_id" int8,
   "repo_libyears" int4,
-  "repo_path" varchar(255),
+  "repo_path" varchar,
   "tool_source" varchar(255) COLLATE "pg_catalog"."default",
   "tool_version" varchar(255) COLLATE "pg_catalog"."default",
   "data_source" varchar(255) COLLATE "pg_catalog"."default",
