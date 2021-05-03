@@ -129,7 +129,15 @@ default_config = {
                     "model": "pull_request_analysis",
                     "repo_group_id": 0
                 },
-
+                #Group 6 Addition
+                {
+                    "delay": 100000,
+                    "given": [
+                        "github_url"
+                    ],
+                    "model": "libyear",
+                    "repo_group_id": 0
+                },
 	        {
 	    	"delay": 10000,
 		"given":[
@@ -192,6 +200,14 @@ default_config = {
                 "switch": 1,
                 "workers": 1
             },
+
+            #Group 6 addition.The port is our student numbers added together truncated to 5 digits
+            "libyear_worker": {
+                "port":39467,
+                "switch": 1,
+                "workers": 1
+            },
+
             "value_worker": {
                 "port": 50800,
                 "scc_bin": "scc",

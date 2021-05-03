@@ -19,10 +19,18 @@ setup(
 	install_requires=[
 		'flask',
 		'requests',
-		'psycopg2-binary',
-		'libyear',
+		'psycopg2-binary'
 	],
-	entry_points={
-	},
-	classifiers=[],
-
+    entry_points={
+        'console_scripts': [
+            'linux_badge_worker_start=workers.linux_badge_worker.runtime:main',
+        ],
+    },
+    classifiers=[
+        'Development Status :: 2 - Pre-Alpha',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7'
+    ]
+)
