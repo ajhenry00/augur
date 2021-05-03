@@ -16,7 +16,8 @@ insight_worker_p = randint(49002, 49500)
 metric_status_worker_p = randint(49501, 50000) 
 pull_request_worker_p = randint(50001, 50500) 
 repo_info_worker_p = randint(50501, 51000) 
-value_worker_p = randint(51002, 51500) 
+value_worker_p = randint(51002, 51250)
+libyear_worker_p = randint(51251, 51500)
 contributor_worker_p = randint(52000, 52500) 
 message_insights_worker_p = randint(53000, 53499) 
 pull_request_analysis_worker_p = randint(54000, 54500) 
@@ -222,7 +223,15 @@ default_config = {
                     ],
                     "model": "gitlab_issues",
                     "repo_group_id": 0
-                }
+                },
+                {
+                    "delay": 1000000,
+                    "given": [
+                        "git_url"
+                    ],
+                    "model": "libyear",
+                    "repo_group_id": 0
+                },
             ]
             },
             "Workers": {
@@ -279,6 +288,12 @@ default_config = {
                     "switch": 0,
                     "workers": 1
                 },
+                #Group 6
+                "libyear_worker":{
+                    "port": libyear_worker_p,
+                    "switch": 0,
+                    "workers": 1
+                }
                 "contributor_worker": {
                     "port": contributor_worker_p,
                     "switch": 0,
