@@ -1,6 +1,8 @@
 # Augur
 Group 6
 
+https://www.youtube.com/watch?v=Ar2lsOVsVxs
+
 branch | status
    --- | ---
 master | [![Build Status](https://travis-ci.com/chaoss/augur.svg?branch=master)](https://travis-ci.com/chaoss/augur)
