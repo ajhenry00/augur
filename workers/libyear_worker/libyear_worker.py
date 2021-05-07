@@ -74,12 +74,20 @@ class LibyearWorker(Worker):
         self.logger.info(f'Repo ID: {repo_id}, Path: {path}')
 
         #calculate libyears here
+<<<<<<< HEAD
         libyear = Libyear()
         calc_libyear = libyear.get_libyear(path)
 
         repo_libyear = {
             'repo_id': repo_id,
             'repo_libyears': calc_libyear,
+=======
+        libyears = somefunc(path)
+
+        repo_libyear = {
+            'repo_id': repo_id,
+            'repo_libyears': libyears,
+>>>>>>> a5cafff1774d444e87429b62a6600cface8216dc
             'repo_path': path,
             'tool_source': self.tool_source,
             'tool_version': self.tool_version,

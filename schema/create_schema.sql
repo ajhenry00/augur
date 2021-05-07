@@ -32,6 +32,7 @@
 \i schema/generate/27-schema_update_29.sql
 \i schema/generate/28-schema_update_30.sql
 \i schema/generate/29-schema_update_31.sql
+<<<<<<< HEAD
 \i schema/generate/30-schema_update_32.sql
 \i schema/generate/31-schema_update_33.sql
 \i schema/generate/32-schema_update_34.sql
@@ -43,3 +44,7 @@
 \i schema/generate/38-schema_update_40.sql
 \i schema/generate/39-schema_update_41.sql
 \i schema/generate/40-schema_update_42.sql
+=======
+--Group6 update addition
+\i schema/generate/30-schema_update_32.sql
+>>>>>>> a5cafff1774d444e87429b62a6600cface8216dc

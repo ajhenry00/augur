@@ -198,6 +198,7 @@ default_config = {
                     "model": "pull_request_analysis",
                     "repo_group_id": 0
                 },
+<<<<<<< HEAD
                 {
                     "delay": 10000,
                     "given":[
@@ -222,9 +223,37 @@ default_config = {
                     ],
                     "model": "gitlab_issues",
                     "repo_group_id": 0
+=======
+                #Group 6 Addition
+                {
+                    "delay": 100000,
+                    "given": [
+                        "github_url"
+                    ],
+                    "model": "libyear",
+                    "repo_group_id": 0
+                },
+	        {
+	    	"delay": 10000,
+		"given":[
+		    "git_url"
+		],
+		"model" : "discourse_analysis",
+		"repo_group_id" : 0
+
+	        },
+	        {
+                "delay": 10000,
+                "given": [
+                    "git_url"
+                ],
+                "model": "clustering",
+                "repo_group_id": 0
+>>>>>>> a5cafff1774d444e87429b62a6600cface8216dc
                 }
             ]
             },
+<<<<<<< HEAD
             "Workers": {
                 "contributor_breadth_worker": {
                     "port": contributor_breadth_worker_p,
@@ -344,6 +373,76 @@ default_config = {
                     "min_df": 0.1,
                     "num_clusters" : 4
                 }
+=======
+            "repo_info_worker": {
+                "port": 50700,
+                "switch": 1,
+                "workers": 1
+            },
+
+            #Group 6 addition.The port is our student numbers added together truncated to 5 digits
+            "libyear_worker": {
+                "port":39467,
+                "switch": 1,
+                "workers": 1
+            },
+
+            "value_worker": {
+                "port": 50800,
+                "scc_bin": "scc",
+                "switch": 0,
+                "workers": 1
+            },
+            "contributor_worker": {
+                "port": 50900,
+                "switch": 0,
+                "workers": 1
+            },
+            "gitlab_issues_worker": {
+                "port": 51000,
+                "switch": 1,
+                "workers": 1
+            },
+            "release_worker": {
+                "port": 51100,
+                "switch": 1,
+                "workers": 1
+            },
+            "gitlab_merge_request_worker": {
+                "port": 51200,
+                "switch": 0,
+                "workers": 1
+            },
+            "message_insights_worker": {
+                "port": 51300,
+                "switch": 0,
+                "workers": 1,
+                "insight_days": 30,
+                "models_dir": "message_models"
+            },
+            "pull_request_analysis_worker": {
+                "port": 51400,
+                "switch": 0,
+                "workers": 1,
+                "insight_days": 30
+            },
+            "discourse_analysis_worker":{
+	    "port" : 51500,
+	    "switch": 0,
+	    "workers": 1
+
+	    },
+	    "clustering_worker": {
+            "port": 51600,
+            "switch": 0,
+            "workers": 1,
+	    "max_df" : 0.9,
+	    "max_features" : 1000,
+	    "min_df": 0.1,
+	    "num_clusters" : 4
+
+        }
+>>>>>>> a5cafff1774d444e87429b62a6600cface8216dc
         },
         "Facade": {
             "check_updates": 1,

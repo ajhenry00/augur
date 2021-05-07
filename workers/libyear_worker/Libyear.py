@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from pypi import get_lib_days, get_no_of_releases
 from utils import load_requirements, get_requirement_files, get_requirement_name_and_version
 
@@ -31,3 +32,6 @@ class Libyear:
             return round(total_days / 365, 2)
         else:
             return None
+=======
+class Libyear:
+>>>>>>> a5cafff1774d444e87429b62a6600cface8216dc
