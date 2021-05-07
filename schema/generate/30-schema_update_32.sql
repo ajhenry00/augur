@@ -31,8 +31,8 @@ CREATE INDEX CONCURRENTLY  "pr_anal_idx"  ON "augur_data"."pull_request_analysis
   "pull_request_id"
 );
 
-update "augur_operations"."augur_settings" set value = 32 where setting = 'augur_data_version'; 
-=======
+update "augur_operations"."augur_settings" set value = 32 where setting = 'augur_data_version';
+
 --Group 6 added table 5-1-2021
 CREATE TABLE IF NOT EXISTS "augur_data"."repo_libyear" (
   "repo_libyear_id" serial8 NOT NULL,
@@ -45,4 +45,3 @@ CREATE TABLE IF NOT EXISTS "augur_data"."repo_libyear" (
   "data_collection_date" timestamp(0),
   CONSTRAINT "repo_libyear_pkey" PRIMARY KEY ("repo_libyear_id")
 );
->>>>>>> a5cafff1774d444e87429b62a6600cface8216dc
